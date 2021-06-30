@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'This is a sample text 1.',
+                        'This is sample text 1.',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0,
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'This is a sample text 2.',
+                        'This is sample text 2.',
                         style: TextStyle(fontSize: 16.0),
                         textScaleFactor: _textScaleFactor,
                         textAlign: TextAlign.center,

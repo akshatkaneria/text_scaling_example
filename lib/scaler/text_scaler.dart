@@ -26,6 +26,7 @@ class TextScaler<T> extends StatefulWidget {
 
   final T initialScaleFactor;
   final Widget child;
+
   @override
   _TextScalerState<T> createState() => _TextScalerState<T>();
 
