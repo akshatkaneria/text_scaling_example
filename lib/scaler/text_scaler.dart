@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class _ScalingFactorBindingScope<T> extends InheritedWidget {
   const _ScalingFactorBindingScope({
-    Key key,
-    this.scalingFactorBindingState,
-    @required Widget child,
-  })  : assert(child != null),
-        super(key: key, child: child);
+    Key? key,
+    required this.scalingFactorBindingState,
+    required Widget child,
+  })  : super(key: key, child: child);
 
   final _TextScalerState<T> scalingFactorBindingState;
 
@@ -18,9 +17,9 @@ class _ScalingFactorBindingScope<T> extends InheritedWidget {
 
 class TextScaler<T> extends StatefulWidget {
   TextScaler({
-    Key key,
-    @required this.initialScaleFactor,
-    this.child,
+    Key? key,
+    required this.initialScaleFactor,
+    required this.child,
   })  : assert(initialScaleFactor != null),
         super(key: key);
 
@@ -32,19 +31,19 @@ class TextScaler<T> extends StatefulWidget {
 
   static T of<T>(BuildContext context) {
     final _ScalingFactorBindingScope<T> scope = context
-        .dependOnInheritedWidgetOfExactType<_ScalingFactorBindingScope<T>>();
-    return scope?.scalingFactorBindingState?.currentValue;
+        .dependOnInheritedWidgetOfExactType<_ScalingFactorBindingScope<T>>() as _ScalingFactorBindingScope<T>;
+    return scope.scalingFactorBindingState.currentValue;
   }
 
   static void update<T>(BuildContext context, T newModel) {
     final _ScalingFactorBindingScope<dynamic> scope = context
-        .dependOnInheritedWidgetOfExactType<_ScalingFactorBindingScope<T>>();
-    scope?.scalingFactorBindingState?.updateModel(newModel);
+        .dependOnInheritedWidgetOfExactType<_ScalingFactorBindingScope<T>>() as _ScalingFactorBindingScope<T>;
+    scope.scalingFactorBindingState.updateModel(newModel);
   }
 }
 
 class _TextScalerState<T> extends State<TextScaler<T>> {
-  T currentValue;
+  late T currentValue;
 
   @override
   void initState() {
