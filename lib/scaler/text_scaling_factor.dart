@@ -9,7 +9,7 @@ class TextScalingFactor {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final TextScalingFactor otherModel = other;
+    final TextScalingFactor otherModel = other as TextScalingFactor;
     return otherModel.scaleFactor == scaleFactor;
   }
 
